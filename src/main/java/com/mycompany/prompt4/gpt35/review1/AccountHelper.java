@@ -8,7 +8,7 @@ public class AccountHelper {
       account = accounts[i];
       if (account.accountType == Account.PREMIUM || account.accountType == Account.PREMIUM_PLUS) {
         // Calculate fee for premium accounts
-        /** ADDED TODO: code does not compile (quick-fixed)
+        /** ADDED TODO-- code does not compile (quick-fixed)
         float fee = .0125f * (account.principal * Math.exp(account.rate * (account.daysActive / 365.25f)) - account.principal); **/
         float fee = (float) (.0125f * (account.principal * Math.exp(account.rate * (account.daysActive / 365.25f)) - account.principal));
         /** ADDED **/

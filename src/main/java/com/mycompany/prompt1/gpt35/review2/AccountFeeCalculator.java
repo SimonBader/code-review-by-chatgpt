@@ -22,6 +22,7 @@ class AccountFeeCalculator {
   private static float calculatePremiumFee(Account account) {
     double daysFraction = account.daysActive / DAYS_IN_YEAR;
     double interest = account.principal * Math.exp(account.rate * daysFraction) - account.principal;
+    /** OBSERVE: TODO-- potentially dangerous cast **/
     return (float) (FEE_RATE * interest);
   }
 }

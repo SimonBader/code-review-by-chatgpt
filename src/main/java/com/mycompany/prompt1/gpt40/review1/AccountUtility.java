@@ -5,6 +5,7 @@ public class AccountUtility {
   private static final float FEE_RATE = 0.0125f;
   private static final float DAYS_IN_YEAR = 365.25f;
 
+  /** OBSERVE: TODO--  code unchanged (beside enhanced-for-loop & magic numbers & getters) **/
   public static float calculateFee(Account[] accounts) {
     float totalFee = 0;
     for (Account account : accounts) {

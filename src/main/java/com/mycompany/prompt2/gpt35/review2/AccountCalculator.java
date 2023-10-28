@@ -19,6 +19,7 @@ public class AccountCalculator {
     int daysActive = account.getDaysActive();
 
     double expValue = Math.exp(rate * (daysActive / 365.25));
+    /** OBSERVE: TODO-- potentially dangerous cast **/
     float fee = (float) (FEE_RATE * (principal * (expValue - 1)));
     return fee;
   }

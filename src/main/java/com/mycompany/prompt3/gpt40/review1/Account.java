@@ -19,10 +19,11 @@ public class Account {
     STANDARD, BUDGET, PREMIUM, PREMIUM_PLUS
   }
 
+  /** OBSERVE: TODO++  OOP-aware **/
   public float calculateFee() {
     if (accountType == AccountType.PREMIUM || accountType == AccountType.PREMIUM_PLUS) {
       final float FEE_PERCENTAGE = 0.0125f;
-      /** ADDED TODO: code does not compile (quick-fixed)
+      /** ADDED TODO-- code does not compile (quick-fixed)
       return FEE_PERCENTAGE * (principal * Math.exp(rate * (daysActive / 365.25f)) - principal); **/
       return (float) (FEE_PERCENTAGE * (principal * Math.exp(rate * (daysActive / 365.25f)) - principal));
       /** ADDED **/

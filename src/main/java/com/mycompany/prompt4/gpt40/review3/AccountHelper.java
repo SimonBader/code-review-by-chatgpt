@@ -3,6 +3,7 @@ package com.mycompany.prompt4.gpt40.review3;
 import java.util.List;
 
 public class AccountHelper {
+  /** OBSERVE: TODO--  code unchanged (beside enhanced-for-loop & magic numbers & getters) **/
   public float calculateTotalFee(List<Account> accounts) {
     final float FEE_MULTIPLIER = 0.0125f;
     final float DAYS_IN_YEAR = 365.25f;

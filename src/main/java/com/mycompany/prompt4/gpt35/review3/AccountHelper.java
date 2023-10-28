@@ -13,6 +13,7 @@ public class AccountHelper {
         double daysInYears = account.daysActive / Account.DAYS_IN_YEAR;
         double exponent = account.rate * daysInYears;
         double fee = 0.0125 * (account.principal * Math.exp(exponent) - account.principal);
+        /** OBSERVE: TODO-- potentially dangerous cast **/
         totalFee += (float) fee;
       }
     }

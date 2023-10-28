@@ -17,9 +17,11 @@ public class Account {
     return this.accountType == AccountType.PREMIUM || this.accountType == AccountType.PREMIUM_PLUS;
   }
 
+  /** OBSERVE: TODO++  OOP-aware **/
   public float getFee() {
     if (isPremiumOrAbove()) {
       final float constantFee = 0.0125f;
+      /** OBSERVE: TODO-- potentially dangerous cast **/
       float compoundedPrincipal = principal * (float) Math.exp(rate * (daysActive/365.25));
       return constantFee * (compoundedPrincipal - principal);
     }

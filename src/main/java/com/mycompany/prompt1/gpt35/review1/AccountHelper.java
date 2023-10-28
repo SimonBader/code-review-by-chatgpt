@@ -1,6 +1,7 @@
 package com.mycompany.prompt1.gpt35.review1;
 
 public class AccountHelper {
+  /** OBSERVE: TODO--  code unchanged (beside enhanced-for-loop) **/
   public float calculateFee(Account accounts[]) {
     float totalFee = 0;
     Account account;

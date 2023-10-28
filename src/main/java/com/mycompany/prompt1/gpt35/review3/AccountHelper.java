@@ -8,6 +8,9 @@ public class AccountHelper {
     for (Account account : accounts) {
       if (account.getAccountType() == Account.AccountType.PREMIUM ||
           account.getAccountType() == Account.AccountType.PREMIUM_PLUS) {
+        /** OBSERVE: TODO--  throws exception during runtime **/
+        /** OBSERVE: TODO--  missing constant 0.125 **/
+        /** OBSERVE: TODO--  .subtract(BigDecimal.ONE) instead of subtracting account.principal **/
         BigDecimal yearFraction = BigDecimal.valueOf(account.getDaysActive()).divide(BigDecimal.valueOf(365.25));
         BigDecimal fee = account.getPrincipal().multiply(
             BigDecimal.valueOf(Math.exp(account.getRate().doubleValue() * yearFraction.doubleValue()))

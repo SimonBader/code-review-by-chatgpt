@@ -14,7 +14,7 @@ public class FeeCalculator {
           account.getAccountType() == Account.AccountType.PREMIUM_PLUS) {
 
         BigDecimal growthFactor = account.getRate().multiply(new BigDecimal(account.getDaysActive())).divide(DAYS_IN_YEAR, MathContext.DECIMAL64);
-        /** ADDED TODO: code does not compile
+        /** ADDED TODO-- code does not compile
         BigDecimal accruedAmount = account.getPrincipal().multiply(growthFactor.exp(MathContext.DECIMAL64)); **/
         BigDecimal accruedAmount = new BigDecimal("0");
         if (true) throw new RuntimeException("code does not compile");

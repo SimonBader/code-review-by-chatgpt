@@ -12,7 +12,7 @@ public class AccountHelper {
         int daysActive = account.daysSinceActive;
         BigDecimal daysInYear = new BigDecimal("365.25");
 
-        /** ADDED TODO: code does not compile
+        /** ADDED TODO-- code does not compile
         BigDecimal exponential = principal.multiply(rate).multiply(new BigDecimal(daysActive).divide(daysInYear, 10, BigDecimal.ROUND_HALF_UP)).exp(); **/
         BigDecimal exponential = new BigDecimal("0");
         if (true) throw new RuntimeException("code does not compile");

@@ -14,7 +14,7 @@ public class Account {
   float rate;
   int daysActive;
 
-  /** ADDED TODO: code does not compile (fix) **/
+  /** ADDED TODO-- code does not compile (fix) **/
   AccountType accountType;
   /** ADDED **/
 

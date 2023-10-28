@@ -19,6 +19,7 @@ public class Account {
 
   // constructors, getters, setters ...
 
+  /** OBSERVE: TODO++  OOP-aware **/
   double calculatePremiumFee() {
     if (accountType == AccountType.PREMIUM || accountType == AccountType.PREMIUM_PLUS) {
       return FEE_RATE * (principal * Math.exp(rate * (daysActive / 365.25)) - principal);
