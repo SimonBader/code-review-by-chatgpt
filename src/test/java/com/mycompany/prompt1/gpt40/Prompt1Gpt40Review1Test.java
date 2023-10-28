@@ -1,12 +1,12 @@
 package com.mycompany.prompt1.gpt40;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt1.gpt40.review1.Account;
 import com.mycompany.prompt1.gpt40.review1.AccountUtility;
 import com.mycompany.prompt1.gpt40.review1.AccountType;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Prompt1Gpt40Review1Test {
   @Test

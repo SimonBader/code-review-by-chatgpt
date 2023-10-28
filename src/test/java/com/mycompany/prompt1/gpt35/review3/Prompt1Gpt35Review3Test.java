@@ -1,11 +1,11 @@
 package com.mycompany.prompt1.gpt35.review3;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt1.gpt35.review3.Account.AccountType;
 import java.math.BigDecimal;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Prompt1Gpt35Review3Test {
   @Test

@@ -1,10 +1,8 @@
 package com.mycompany.original;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.mycompany.original.Account;
-import com.mycompany.original.AccountHelper;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class OriginalTest {
   public static final float EXPECTED_HAPPY_PATH_RESULT = 0.0024015524F;

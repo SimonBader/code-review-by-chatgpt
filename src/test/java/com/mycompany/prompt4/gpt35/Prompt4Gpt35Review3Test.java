@@ -1,11 +1,11 @@
 package com.mycompany.prompt4.gpt35;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt4.gpt35.review3.Account;
 import com.mycompany.prompt4.gpt35.review3.AccountHelper;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Prompt4Gpt35Review3Test {
   @Test

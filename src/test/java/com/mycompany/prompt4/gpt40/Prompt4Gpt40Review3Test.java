@@ -1,6 +1,6 @@
 package com.mycompany.prompt4.gpt40;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt4.gpt40.review3.Account;
@@ -9,7 +9,7 @@ import com.mycompany.prompt4.gpt40.review3.AccountHelper;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Prompt4Gpt40Review3Test {
   @Test

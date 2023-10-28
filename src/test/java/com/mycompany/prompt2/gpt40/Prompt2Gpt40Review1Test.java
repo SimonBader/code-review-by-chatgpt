@@ -1,12 +1,12 @@
 package com.mycompany.prompt2.gpt40;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt2.gpt40.review1.Account;
 import com.mycompany.prompt2.gpt40.review1.FeeCalculator;
 import java.math.BigDecimal;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Prompt2Gpt40Review1Test {
   @Test
