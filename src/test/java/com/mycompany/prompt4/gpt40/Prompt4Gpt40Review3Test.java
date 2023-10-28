@@ -2,6 +2,7 @@ package com.mycompany.prompt4.gpt40;
 
 import static junit.framework.TestCase.assertEquals;
 
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt4.gpt40.review3.Account;
 import com.mycompany.prompt4.gpt40.review3.Account.AccountType;
 import com.mycompany.prompt4.gpt40.review3.AccountHelper;
@@ -15,12 +16,12 @@ public class Prompt4Gpt40Review3Test {
   public void TestHappyPath() {
     AccountHelper accountHelper = new AccountHelper();
     List<Account> accounts = Arrays.asList(
-        new Account(4.5F, 0.5F, 17, Account.AccountType.PREMIUM),
-        new Account(3.66F, 0.5F, 17, Account.AccountType.PREMIUM_PLUS),
-        new Account(1F, 0.2F, 44, Account.AccountType.BUDGET),
-        new Account(1F, 0.2F, 8, Account.AccountType.STANDARD)
+        new Account(OriginalTest.ACC_ONE_PRINCIPAL, OriginalTest.ACC_ONE_RATE, OriginalTest.ACC_ONE_DAYS, Account.AccountType.PREMIUM),
+        new Account(OriginalTest.ACC_TWO_PRINCIPAL, OriginalTest.ACC_TWO_RATE, OriginalTest.ACC_TWO_DAYS, Account.AccountType.PREMIUM_PLUS),
+        new Account(OriginalTest.ACC_THREE_PRINCIPAL, OriginalTest.ACC_THREE_RATE, OriginalTest.ACC_THREE_DAYS, Account.AccountType.BUDGET),
+        new Account(OriginalTest.ACC_FOUR_PRINCIPAL, OriginalTest.ACC_FOUR_RATE, OriginalTest.ACC_FOUR_DAYS, Account.AccountType.STANDARD)
     );
-    assertEquals(0.0024015524F, accountHelper.calculateTotalFee(accounts));
+    assertEquals(OriginalTest.EXPECTED_HAPPY_PATH_RESULT, accountHelper.calculateTotalFee(accounts));
   }
 
   @Test

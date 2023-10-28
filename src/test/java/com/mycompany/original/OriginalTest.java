@@ -7,16 +7,29 @@ import com.mycompany.original.AccountHelper;
 import org.junit.Test;
 
 public class OriginalTest {
+  public static final float EXPECTED_HAPPY_PATH_RESULT = 0.0024015524F;
+  public static final float ACC_ONE_PRINCIPAL = 4.5F;
+  public static final float ACC_ONE_RATE = 0.5F;
+  public static final int ACC_ONE_DAYS = 17;
+  public static final float ACC_TWO_PRINCIPAL = 3.66F;
+  public static final float ACC_TWO_RATE = 0.5F;
+  public static final int ACC_TWO_DAYS = 17;
+  public static final float ACC_THREE_PRINCIPAL = 1F;
+  public static final float ACC_THREE_RATE = 0.2F;
+  public static final int ACC_THREE_DAYS = 44;
+  public static final float ACC_FOUR_PRINCIPAL = 1F;
+  public static final float ACC_FOUR_RATE = 0.2F;
+  public static final int ACC_FOUR_DAYS = 8;
   @Test
   public void TestHappyPath(){
     AccountHelper accountHelper = new AccountHelper();
     Account[] accounts = new Account[] {
-        new Account(4.5F, 0.5F, 17, Account.PREMIUM),
-        new Account(3.66F, 0.5F, 17, Account.PREMIUM_PLUS),
-        new Account(1F, 0.2F, 44, Account.BUDGET),
-        new Account(1F, 0.2F, 8, Account.STANDARD),
+        new Account(ACC_ONE_PRINCIPAL, ACC_ONE_RATE, ACC_ONE_DAYS, Account.PREMIUM),
+        new Account(ACC_TWO_PRINCIPAL, ACC_TWO_RATE, ACC_TWO_DAYS, Account.PREMIUM_PLUS),
+        new Account(ACC_THREE_PRINCIPAL, ACC_THREE_RATE, ACC_THREE_DAYS, Account.BUDGET),
+        new Account(ACC_FOUR_PRINCIPAL, ACC_FOUR_RATE, ACC_FOUR_DAYS, Account.STANDARD),
     };
-    assertEquals(0.0024015524F, accountHelper.calculateFee(accounts));
+    assertEquals(EXPECTED_HAPPY_PATH_RESULT, accountHelper.calculateFee(accounts));
   }
 
   @Test

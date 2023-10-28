@@ -2,6 +2,7 @@ package com.mycompany.prompt3.gpt40;
 
 import static junit.framework.TestCase.assertEquals;
 
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt3.gpt40.review3.Account;
 import com.mycompany.prompt3.gpt40.review3.AccountType;
 import com.mycompany.prompt3.gpt40.review3.AccountHelper;
@@ -17,7 +18,7 @@ public class Prompt3Gpt40Review3Test {
         new Account(1, 0.2, 44, AccountType.BUDGET),
         new Account(1, 0.2, 8, AccountType.STANDARD),
     };
-    assertEquals(0.0024015524, accountHelper.calculateTotalFee(accounts));
+    assertEquals(OriginalTest.EXPECTED_HAPPY_PATH_RESULT, accountHelper.calculateTotalFee(accounts));
   }
 
   @Test

@@ -2,6 +2,7 @@ package com.mycompany.prompt2.gpt35;
 
 import static junit.framework.TestCase.assertEquals;
 
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt2.gpt35.review1.Account;
 import com.mycompany.prompt2.gpt35.review1.FeeCalculator;
 import org.junit.Test;
@@ -16,7 +17,7 @@ public class Prompt2Gpt35Review1Test {
         new Account(1, 0.2, 44, Account.BUDGET),
         new Account(1, 0.2, 8, Account.STANDARD),
     };
-    assertEquals(0.0024015524, accountHelper.calculateFee(accounts));
+    assertEquals(OriginalTest.EXPECTED_HAPPY_PATH_RESULT, accountHelper.calculateFee(accounts));
   }
 
   @Test

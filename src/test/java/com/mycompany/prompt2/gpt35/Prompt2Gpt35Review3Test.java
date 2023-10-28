@@ -2,6 +2,7 @@ package com.mycompany.prompt2.gpt35;
 
 import static junit.framework.TestCase.assertEquals;
 
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt2.gpt35.review3.Account;
 import com.mycompany.prompt2.gpt35.review3.AccountHelper;
 import java.math.BigDecimal;
@@ -17,7 +18,7 @@ public class Prompt2Gpt35Review3Test {
         new Account(new BigDecimal("1"), new BigDecimal("0.2"), 44, Account.BUDGET),
         new Account(new BigDecimal("1"), new BigDecimal("0.2"), 8, Account.STANDARD),
     };
-    assertEquals(0.0024015524F, accountHelper.calculateFee(accounts));
+    assertEquals(OriginalTest.EXPECTED_HAPPY_PATH_RESULT, accountHelper.calculateFee(accounts));
   }
 
   @Test
