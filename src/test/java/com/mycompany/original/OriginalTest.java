@@ -13,7 +13,10 @@ public class OriginalTest {
   public static Stream<Arguments> happyPathArguments() {
     return Stream.of(
         // principal1, rate1, days1, principal2, rate2, days2, principal3, rate3, days3, expectedResult
-        Arguments.of(4.5F, 0.5F, 17, 3.66F, 0.5F, 17, 1F, 0.2F, 44, 0.0024015524F)
+        Arguments.of(4.5F, 0.5F, 17, 3.66F, 0.5F, 17, 1F, 0.2F, 44, 0.0024015524F),
+        Arguments.of(4.5564F, 21.556F, 147, 354.66F, 100.5F, 317, 1F, 0.2F, 44, 3.3693461E38F)
+        /** OBSERVE: TODO expectedResult too large for a float
+        Arguments.of(4.5564F, 21.556F, 147, 364.66F, 100.5F, 317, 1F, 0.2F, 44, 0F)  **/
     );
   }
 
