@@ -1,6 +1,8 @@
 package com.mycompany.prompt2.gpt40;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt2.gpt40.review3.Account;
 import com.mycompany.prompt2.gpt40.review3.FeeCalculator;
 import java.math.BigDecimal;
@@ -26,8 +28,7 @@ public class Prompt2Gpt40Review3Test {
     FeeCalculator accountHelper = new FeeCalculator();
     Account[] accounts = new Account[] {
     };
-    // MOVED FROM 0.0 TO 0
-    assertEquals(new BigDecimal("0"), accountHelper.calculateFee(accounts));
+    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), FeeCalculator.calculateFee(accounts));
   }
 
   @Test
@@ -36,8 +37,7 @@ public class Prompt2Gpt40Review3Test {
     Account[] accounts = new Account[] {
         new Account(new BigDecimal("4.5"), new BigDecimal("0.5"), 0, Account.AccountType.PREMIUM),
     };
-    // MOVED FROM 0.0 TO 0.00
-    assertEquals(new BigDecimal("0.00"), accountHelper.calculateFee(accounts));
+    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), FeeCalculator.calculateFee(accounts));
   }
 
 }

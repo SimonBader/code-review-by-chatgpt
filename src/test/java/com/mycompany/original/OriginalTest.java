@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 public class OriginalTest {
+  public static float ZERO = 0F;
 
   public static Stream<Arguments> happyPathArguments() {
     return Stream.of(
@@ -37,7 +38,7 @@ public class OriginalTest {
     AccountHelper accountHelper = new AccountHelper();
     Account[] accounts = new Account[]{
     };
-    assertEquals(0.0F, accountHelper.calculateFee(accounts));
+    assertEquals(OriginalTest.ZERO, accountHelper.calculateFee(accounts));
   }
 
   @Test
@@ -46,7 +47,7 @@ public class OriginalTest {
     Account[] accounts = new Account[]{
         new Account(4.5F, 0.5F, 0, Account.PREMIUM),
     };
-    assertEquals(0.0F, accountHelper.calculateFee(accounts));
+    assertEquals(OriginalTest.ZERO, accountHelper.calculateFee(accounts));
   }
 
 }

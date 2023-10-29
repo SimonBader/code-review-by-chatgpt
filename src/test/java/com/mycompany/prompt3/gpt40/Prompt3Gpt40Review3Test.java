@@ -1,9 +1,11 @@
 package com.mycompany.prompt3.gpt40;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt3.gpt40.review3.Account;
-import com.mycompany.prompt3.gpt40.review3.AccountType;
 import com.mycompany.prompt3.gpt40.review3.AccountHelper;
+import com.mycompany.prompt3.gpt40.review3.AccountType;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -26,7 +28,7 @@ public class Prompt3Gpt40Review3Test {
     AccountHelper accountHelper = new AccountHelper();
     Account[] accounts = new Account[] {
     };
-    assertEquals(0.0, accountHelper.calculateTotalFee(accounts));
+    assertEquals(OriginalTest.ZERO, accountHelper.calculateTotalFee(accounts));
   }
 
   @Test
@@ -35,7 +37,7 @@ public class Prompt3Gpt40Review3Test {
     Account[] accounts = new Account[] {
         new Account(4.5, 0.5, 0, AccountType.PREMIUM),
     };
-    assertEquals(0.0, accountHelper.calculateTotalFee(accounts));
+    assertEquals(OriginalTest.ZERO, accountHelper.calculateTotalFee(accounts));
   }
 
 }

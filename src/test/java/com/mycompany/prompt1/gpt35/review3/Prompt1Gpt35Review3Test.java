@@ -1,6 +1,8 @@
 package com.mycompany.prompt1.gpt35.review3;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt1.gpt35.review3.Account.AccountType;
 import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
@@ -21,22 +23,22 @@ public class Prompt1Gpt35Review3Test {
   }
 
   @Test
-  public void testNoAccounts(){
+  public void testNoAccounts() {
     AccountHelper accountHelper = new AccountHelper();
-    Account[] accounts = new Account[] {
+    Account[] accounts = new Account[]{
     };
-    // MOVED FROM 0.0 TO 0
-    assertEquals(new BigDecimal("0"), accountHelper.calculateFee(accounts));
+
+    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), accountHelper.calculateFee(accounts));
   }
 
   @Test
-  public void testDaysActiveZero(){
+  public void testDaysActiveZero() {
     AccountHelper accountHelper = new AccountHelper();
-    Account[] accounts = new Account[] {
+    Account[] accounts = new Account[]{
         new Account(new BigDecimal("4.5"), new BigDecimal("0.5"), 0, AccountType.PREMIUM),
     };
-    // MOVED FROM 0.0 TO 0.00
-    assertEquals(new BigDecimal("0.00"), accountHelper.calculateFee(accounts));
+
+    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), accountHelper.calculateFee(accounts));
   }
 
 }

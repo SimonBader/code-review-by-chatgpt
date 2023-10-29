@@ -1,6 +1,8 @@
 package com.mycompany.prompt4.gpt40;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt4.gpt40.review3.Account;
 import com.mycompany.prompt4.gpt40.review3.Account.AccountType;
 import com.mycompany.prompt4.gpt40.review3.AccountHelper;
@@ -28,7 +30,7 @@ public class Prompt4Gpt40Review3Test {
   public void testNoAccounts() {
     AccountHelper accountHelper = new AccountHelper();
     List<Account> accounts = Collections.emptyList();
-    assertEquals(0.0F, accountHelper.calculateTotalFee(accounts));
+    assertEquals(OriginalTest.ZERO, accountHelper.calculateTotalFee(accounts));
   }
 
   @Test
@@ -37,7 +39,7 @@ public class Prompt4Gpt40Review3Test {
     List<Account> accounts = Collections.singletonList(
         new Account(4.5F, 0.5F, 0, AccountType.PREMIUM)
     );
-    assertEquals(0.0F, accountHelper.calculateTotalFee(accounts));
+    assertEquals(OriginalTest.ZERO, accountHelper.calculateTotalFee(accounts));
   }
 
 }

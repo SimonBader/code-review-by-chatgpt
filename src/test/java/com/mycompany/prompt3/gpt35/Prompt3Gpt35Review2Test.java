@@ -1,6 +1,8 @@
 package com.mycompany.prompt3.gpt35;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.mycompany.original.OriginalTest;
 import com.mycompany.prompt3.gpt35.review2.Account;
 import com.mycompany.prompt3.gpt35.review2.AccountHelper;
 import org.junit.jupiter.api.Test;
@@ -25,7 +27,7 @@ public class Prompt3Gpt35Review2Test {
     AccountHelper accountHelper = new AccountHelper();
     Account[] accounts = new Account[] {
     };
-    assertEquals(0.0F, accountHelper.calculateFee(accounts));
+    assertEquals(OriginalTest.ZERO, accountHelper.calculateFee(accounts));
   }
 
   @Test
@@ -34,7 +36,7 @@ public class Prompt3Gpt35Review2Test {
     Account[] accounts = new Account[] {
         new Account(4.5F, 0.5F, 0, Account.PREMIUM),
     };
-    assertEquals(0.0F, accountHelper.calculateFee(accounts));
+    assertEquals(OriginalTest.ZERO, accountHelper.calculateFee(accounts));
   }
 
 }
