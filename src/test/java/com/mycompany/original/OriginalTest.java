@@ -2,46 +2,45 @@ package com.mycompany.original;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class OriginalTest {
-  public static final float EXPECTED_HAPPY_PATH_RESULT = 0.0024015524F;
-  public static final float ACC_ONE_PRINCIPAL = 4.5F;
-  public static final float ACC_ONE_RATE = 0.5F;
-  public static final int ACC_ONE_DAYS = 17;
-  public static final float ACC_TWO_PRINCIPAL = 3.66F;
-  public static final float ACC_TWO_RATE = 0.5F;
-  public static final int ACC_TWO_DAYS = 17;
-  public static final float ACC_THREE_PRINCIPAL = 1F;
-  public static final float ACC_THREE_RATE = 0.2F;
-  public static final int ACC_THREE_DAYS = 44;
-  public static final float ACC_FOUR_PRINCIPAL = 1F;
-  public static final float ACC_FOUR_RATE = 0.2F;
-  public static final int ACC_FOUR_DAYS = 8;
-  @Test
-  public void TestHappyPath(){
+
+  public static Stream<Arguments> happyPathArguments() {
+    return Stream.of(
+        // principal1, rate1, days1, principal2, rate2, days2, principal3, rate3, days3, expectedResult
+        Arguments.of(4.5F, 0.5F, 17, 3.66F, 0.5F, 17, 1F, 0.2F, 44, 0.0024015524F)
+    );
+  }
+
+  @ParameterizedTest
+  @MethodSource("com.mycompany.original.OriginalTest#happyPathArguments")
+  public void TestHappyPath(float principal1, float rate1, int days1, float principal2, float rate2, int days2, float principal3, float rate3, int days3, float expectedResult){
     AccountHelper accountHelper = new AccountHelper();
     Account[] accounts = new Account[] {
-        new Account(ACC_ONE_PRINCIPAL, ACC_ONE_RATE, ACC_ONE_DAYS, Account.PREMIUM),
-        new Account(ACC_TWO_PRINCIPAL, ACC_TWO_RATE, ACC_TWO_DAYS, Account.PREMIUM_PLUS),
-        new Account(ACC_THREE_PRINCIPAL, ACC_THREE_RATE, ACC_THREE_DAYS, Account.BUDGET),
-        new Account(ACC_FOUR_PRINCIPAL, ACC_FOUR_RATE, ACC_FOUR_DAYS, Account.STANDARD),
+        new Account(principal1, rate1, days1, Account.PREMIUM),
+        new Account(principal2, rate2, days2, Account.PREMIUM_PLUS),
+        new Account(principal3, rate3, days3, Account.BUDGET),
     };
-    assertEquals(EXPECTED_HAPPY_PATH_RESULT, accountHelper.calculateFee(accounts));
+    assertEquals(expectedResult, accountHelper.calculateFee(accounts));
   }
 
   @Test
-  public void TestNoAccounts(){
+  public void testNoAccounts() {
     AccountHelper accountHelper = new AccountHelper();
-    Account[] accounts = new Account[] {
+    Account[] accounts = new Account[]{
     };
     assertEquals(0.0F, accountHelper.calculateFee(accounts));
   }
 
   @Test
-  public void TestDaysActiveZero(){
+  public void testDaysActiveZero() {
     AccountHelper accountHelper = new AccountHelper();
-    Account[] accounts = new Account[] {
+    Account[] accounts = new Account[]{
         new Account(4.5F, 0.5F, 0, Account.PREMIUM),
     };
     assertEquals(0.0F, accountHelper.calculateFee(accounts));
