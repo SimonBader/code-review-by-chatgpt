@@ -3,14 +3,14 @@ package com.mycompany.prompt2.gpt40;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
-import com.mycompany.prompt2.gpt40.review1.Account;
-import com.mycompany.prompt2.gpt40.review1.FeeCalculator;
+import com.mycompany.prompt2.gpt40.review3.Account;
+import com.mycompany.prompt2.gpt40.review3.FeeCalculator;
 import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class Prompt2Gpt40Review1Test {
+public class Prompt2Gpt40Review3WithQuickFixTest {
   @ParameterizedTest
   @MethodSource("com.mycompany.original.OriginalTest#happyPathArguments")
   public void testHappyPath(float principal1, float rate1, int days1, float principal2, float rate2, int days2, float principal3, float rate3, int days3, float expectedResult){

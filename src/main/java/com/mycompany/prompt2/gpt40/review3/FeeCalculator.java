@@ -13,6 +13,7 @@ public class FeeCalculator {
         BigDecimal interest = account.getPrincipal()
             .multiply(
                 (BigDecimal.ONE.add(account.getRate())
+                    /** OBSERVE: TODO-- replace `Math.exp(rate * n)` with `(1 + rate).pow(n)` is wrong
                     /** ADDED TODO-- code does not compile (quick-fixed)
                     .pow(account.getDaysActive() / Account.YEAR_DAYS.doubleValue(), new MathContext(4))) **/
                     .pow((int) (account.getDaysActive() / Account.YEAR_DAYS.doubleValue()), new MathContext(4)))

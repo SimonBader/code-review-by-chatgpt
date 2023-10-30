@@ -1,15 +1,15 @@
-package com.mycompany.prompt3.gpt35;
+package com.mycompany.prompt4.gpt35;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
-import com.mycompany.prompt3.gpt35.review2.Account;
-import com.mycompany.prompt3.gpt35.review2.AccountHelper;
+import com.mycompany.prompt4.gpt35.review1.Account;
+import com.mycompany.prompt4.gpt35.review1.AccountHelper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class Prompt3Gpt35Review2Test {
+public class Prompt4Gpt35Review1WithQuickFixTest {
   @ParameterizedTest
   @MethodSource("com.mycompany.original.OriginalTest#happyPathArguments")
   public void testHappyPath(float principal1, float rate1, int days1, float principal2, float rate2, int days2, float principal3, float rate3, int days3, float expectedResult){
