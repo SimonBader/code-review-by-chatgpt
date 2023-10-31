@@ -1,5 +1,6 @@
 package com.mycompany.prompt2.gpt35;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
@@ -24,20 +25,22 @@ public class Prompt2Gpt35Review3WithCompileErrorTest {
   }
 
   @Test
-  public void testNoAccounts(){
+  public void testNoAccounts() {
     AccountHelper accountHelper = new AccountHelper();
-    Account[] accounts = new Account[] {
+    Account[] accounts = new Account[]{
     };
-    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), accountHelper.calculateFee(accounts));
+    assertThat(BigDecimal.valueOf(OriginalTest.ZERO)
+        .compareTo(accountHelper.calculateFee(accounts))).isEqualTo(0);
   }
 
   @Test
-  public void testDaysActiveZero(){
+  public void testDaysActiveZero() {
     AccountHelper accountHelper = new AccountHelper();
-    Account[] accounts = new Account[] {
+    Account[] accounts = new Account[]{
         new Account(new BigDecimal("4.5"), new BigDecimal("0.5"), 0, Account.PREMIUM),
     };
-    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), accountHelper.calculateFee(accounts));
+    assertThat(BigDecimal.valueOf(OriginalTest.ZERO)
+        .compareTo(accountHelper.calculateFee(accounts))).isEqualTo(0);
   }
 
 }

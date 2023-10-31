@@ -1,5 +1,6 @@
 package com.mycompany.prompt2.gpt40;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
@@ -28,7 +29,8 @@ public class Prompt2Gpt40Review3WithQuickFixTest {
     FeeCalculator accountHelper = new FeeCalculator();
     Account[] accounts = new Account[] {
     };
-    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), FeeCalculator.calculateFee(accounts));
+    assertThat(BigDecimal.valueOf(OriginalTest.ZERO)
+        .compareTo(FeeCalculator.calculateFee(accounts))).isEqualTo(0);
   }
 
   @Test
@@ -37,7 +39,8 @@ public class Prompt2Gpt40Review3WithQuickFixTest {
     Account[] accounts = new Account[] {
         new Account(new BigDecimal("4.5"), new BigDecimal("0.5"), 0, Account.AccountType.PREMIUM),
     };
-    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), FeeCalculator.calculateFee(accounts));
+    assertThat(BigDecimal.valueOf(OriginalTest.ZERO)
+        .compareTo(FeeCalculator.calculateFee(accounts))).isEqualTo(0);
   }
 
 }

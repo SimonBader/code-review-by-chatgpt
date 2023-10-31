@@ -1,5 +1,6 @@
 package com.mycompany.prompt1.gpt35.review3;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.mycompany.original.OriginalTest;
@@ -28,7 +29,8 @@ public class Prompt1Gpt35Review3Test {
     Account[] accounts = new Account[]{
     };
 
-    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), accountHelper.calculateFee(accounts));
+    assertThat(BigDecimal.valueOf(OriginalTest.ZERO)
+        .compareTo(accountHelper.calculateFee(accounts))).isEqualTo(0);
   }
 
   @Test
@@ -38,7 +40,8 @@ public class Prompt1Gpt35Review3Test {
         new Account(new BigDecimal("4.5"), new BigDecimal("0.5"), 0, AccountType.PREMIUM),
     };
 
-    assertEquals(BigDecimal.valueOf(OriginalTest.ZERO), accountHelper.calculateFee(accounts));
+    assertThat(BigDecimal.valueOf(OriginalTest.ZERO)
+        .compareTo(accountHelper.calculateFee(accounts))).isEqualTo(0);
   }
 
 }
